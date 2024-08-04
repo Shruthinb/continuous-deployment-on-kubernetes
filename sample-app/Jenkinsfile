@@ -26,16 +26,19 @@ spec:
   containers:
   - name: golang
     image: golang:1.10
+    restartPolicy: OnFailure
     command:
     - cat
     tty: true
   - name: gcloud
     image: gcr.io/cloud-builders/gcloud
+    restartPolicy: OnFailure
     command:
     - cat
     tty: true
   - name: kubectl
     image: gcr.io/cloud-builders/kubectl
+    restartPolicy: OnFailure
     command:
     - cat
     tty: true
